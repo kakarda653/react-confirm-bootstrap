@@ -4,7 +4,7 @@
   "description": "Confirm Dialog for react with Bootstrap Modal",
   "main": "lib/Confirm.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "gulp build",
     "clean": "rimraf lib",
     "lint": "eslint src",
     "prepublish": "npm run clean && npm run build"

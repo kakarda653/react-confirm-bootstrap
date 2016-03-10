@@ -16,8 +16,8 @@ Confirm Dialog for react with Bootstrap Modal.
             return (
                 <Confirm
                     onConfirm={this.onConfirm}
-                    body="Are you sure you want to delete this?",
-                    confirmText="Confirm Delete",
+                    body="Are you sure you want to delete this?"
+                    confirmText="Confirm Delete"
                     title="Deleting Stuff">
                     <button>Delete Stuff</button>
                 </Confirm>
