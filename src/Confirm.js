@@ -61,7 +61,7 @@ var Confirm = React.createClass({
             <span style={this.props.style}>
                 {content}
                 <Modal show={this.state.isOpened} onHide={this.onClose}>
-                    <Modal.Header title={this.props.title} />
+                    <Modal.Header>{this.props.title}</Modal.Header>
                     <Modal.Body>
                         {this.props.body}
                     </Modal.Body>

@@ -4,6 +4,8 @@ Confirm Dialog for react with Bootstrap Modal.
 
 ## Example
 
+![Example](https://github.com/gregthebusker/react-confirm-bootstrap/blob/master/img/example.png)
+
 ```js
     var Confirm = require('react-confirm-bootstrap');
 
