@@ -5,6 +5,7 @@ var Confirm = React.createClass({
     propTypes: {
         body: React.PropTypes.any.isRequired,
         buttonText: React.PropTypes.string,
+        cancelText: React.PropTypes.string,
         confirmText: React.PropTypes.string,
         onConfirm: React.PropTypes.func.isRequired,
         title: React.PropTypes.string.isRequired,
@@ -68,7 +69,7 @@ var Confirm = React.createClass({
                         {this.props.body}
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button bsStyle="default" onClick={this.onClose}>Cancel</Button>
+                        <Button bsStyle="default" onClick={this.onClose}>{this.props.cancelText ? this.props.cancelText : 'Cancel'}</Button>
                         <Button bsStyle="danger" onClick={this.onConfim}>{this.props.confirmText ? this.props.confirmText : 'Confirm'}</Button>
                     </Modal.Footer>
                 </Modal>
