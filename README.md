@@ -32,19 +32,19 @@ Confirm Dialog for react with Bootstrap Modal.
 #### body: React.PropTypes.any.isRequired
 Body text for the modal.
 
-#### buttonText: React.PropTypes.any
+#### buttonText: React.PropTypes.node
 Options text for the initial button.  Is only used if children are not passed.
 
-#### cancelText: React.PropTypes.any
+#### cancelText: React.PropTypes.node
 Text for the cancel button in the modal.
 
-#### confirmText: React.PropTypes.any
+#### confirmText: React.PropTypes.node
 Text for the confirm button in the modal.
 
 #### onConfirm: React.PropTypes.func.isRequired
 Function to be called once confirmed.
 
-#### title: React.PropTypes.string.isRequired
+#### title: React.PropTypes.node.isRequired
 Title text for the modal
 
 #### visible: React.PropTypes.bool
