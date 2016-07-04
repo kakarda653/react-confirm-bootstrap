@@ -38,6 +38,13 @@ Options text for the initial button.  Is only used if children are not passed.
 #### cancelText: React.PropTypes.node
 Text for the cancel button in the modal.
 
+#### confirmBSStyle: React.PropTypes.string
+Bootstrap style.
+<br/>
+Options: 'primary', 'success', 'info', 'warning', 'danger', 'link'.
+<br/>
+Default: 'danger'
+
 #### confirmText: React.PropTypes.node
 Text for the confirm button in the modal.
 
