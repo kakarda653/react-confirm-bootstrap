@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { Button, Modal } from 'react-bootstrap';
 
 class Confirm extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
-            isOpened : props.visible
+            isOpened: props.visible
         };
         this.onButtonClick = this.onButtonClick.bind(this);
         this.onClose = this.onClose.bind(this);
@@ -16,47 +15,54 @@ class Confirm extends React.Component {
 
     onButtonClick() {
         this.setState({
-            isOpened: true,
+            isOpened: true
         });
     }
 
-    onClose() {
+    onClose(event) {
+        event.stopPropagation();
         this.setState({
-            isOpened: false,
+            isOpened: false
         });
     }
 
-    onConfirm() {
+    onConfirm(event) {
+        event.stopPropagation();
         this.setState({
-            isOpened: false,
+            isOpened: false
         });
         this.props.onConfirm();
     }
 
     render() {
-        var cancelButton = this.props.showCancelButton ?
-            (<Button bsStyle="default" onClick={this.onClose}>{this.props.cancelText}</Button>) : null;
+        var cancelButton = this.props.showCancelButton ? (
+            <Button bsStyle="default" onClick={this.onClose}>
+                {this.props.cancelText}
+            </Button>
+        ) : null;
         var modal = (
             <Modal show={this.state.isOpened} onHide={this.onClose}>
                 <Modal.Header>
                     <Modal.Title>{this.props.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    {this.props.body}
-                </Modal.Body>
+                <Modal.Body>{this.props.body}</Modal.Body>
                 <Modal.Footer>
                     {cancelButton}
-                    <Button bsStyle={this.props.confirmBSStyle} onClick={this.onConfirm}>{this.props.confirmText}</Button>
+                    <Button bsStyle={this.props.confirmBSStyle} onClick={this.onConfirm}>
+                        {this.props.confirmText}
+                    </Button>
                 </Modal.Footer>
             </Modal>
         );
         var content;
         if (this.props.children) {
             var btn = React.Children.only(this.props.children);
-            content = React.cloneElement(btn, {
-                onClick: this.onButtonClick,
-                style: this.props.style
-            },
+            content = React.cloneElement(
+                btn,
+                {
+                    onClick: this.onButtonClick,
+                    style: this.props.style
+                },
                 btn.props.children,
                 modal
             );
@@ -90,7 +96,6 @@ Confirm.defaultProps = {
     confirmBSStyle: 'danger',
     showCancelButton: true
 };
-
 
 export { Confirm };
 export default Confirm;
