@@ -15,18 +15,23 @@ class Confirm extends React.Component {
     }
 
     onButtonClick() {
-        this.setState({
-            isOpened: true
-        });
+        // Since the modal is inside the button click events will propagate up.
+        if (!this.state.isOpened) {
+            this.setState({
+                isOpened: true
+            });
+        }
     }
 
     onClose(event) {
-        event.stopPropagation();
+        if (event) {
+            event.stopPropagation();
+        }
         this.setState({
             isOpened: false
         });
 
-        if (typeof this.props.onClose == 'function') {
+        if (typeof this.props.onClose === 'function') {
             this.props.onClose();
         }
     }
