@@ -51,7 +51,7 @@ class Confirm extends React.Component {
             </Button>
         ) : null;
         var modal = (
-            <Modal show={this.state.isOpened} onHide={this.onClose}>
+            <Modal show={this.state.isOpened} onHide={this.onClose} animated={false}>
                 <Modal.Header>
                     <Modal.Title>{this.props.title}</Modal.Title>
                 </Modal.Header>
